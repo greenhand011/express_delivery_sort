@@ -1,0 +1,37 @@
+'''一个dict, 存储公司每个⼈人的信息， 信息包含⾄至少姓名、年年龄、电话、职位、工资，
+提供⼀一个简单的查找接⼝口，⽤用户按要求输⼊入要查找的⼈人，程序把查到的信息打印出来'''
+company = {
+    "Alice": {
+        "姓名": "Alice",
+        "年龄": 28,
+        "电话": "13800010001",
+        "职位": "软件工程师",
+        "工资": 15000
+    },
+    "Bob": {
+        "姓名": "Bob",
+        "年龄": 32,
+        "电话": "13800020002",
+        "职位": "安全工程师",
+        "工资": 20000
+    },
+    "Charlie": {
+        "姓名": "Charlie",
+        "年龄": 35,
+        "电话": "13800030003",
+        "职位": "项目经理",
+        "工资": 25000
+    }
+}
+
+def find_name(name):
+    name_lower=name.lower()
+    for key,info in company.items():
+        if key.lower()==name_lower:
+            for k,v in info.items():
+                print(f"{k}:{v}")
+            return
+    print("error input")
+if __name__ == "__main__":
+    name=input("please input name:").strip()
+    find_name(name)
